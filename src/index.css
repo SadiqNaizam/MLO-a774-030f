@@ -1,101 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Light Theme Variables from PRD */
+    --background: 216 67% 97%; /* PRD: #F3F6FA */
+    --foreground: 223 13% 42%; /* PRD: #60677A (primaryText) */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* PRD: #FFFFFF (surface) */
+    --card-foreground: 223 13% 42%; /* PRD: #60677A (primaryText) */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* PRD: #FFFFFF (surface) */
+    --popover-foreground: 223 13% 42%; /* PRD: #60677A (primaryText) */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 217 100% 61%; /* PRD: #377DFF (accentBlue) */
+    --primary-foreground: 0 0% 100%; /* White for contrast with accentBlue */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 216 33% 98%; /* PRD: #F8F9FB (sidebar color, used as light gray bg) */
+    --secondary-foreground: 223 13% 42%; /* PRD: #60677A (primaryText) */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 216 33% 98%; /* PRD: #F8F9FB (sidebar color, for muted backgrounds) */
+    --muted-foreground: 214 20% 65%; /* PRD: #98A6B6 (secondaryText) */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 217 100% 61%; /* PRD: #377DFF (accentBlue) */
+    --accent-foreground: 0 0% 100%; /* White for contrast */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 349 87% 63%; /* PRD: #F3506E (accentRed) */
+    --destructive-foreground: 0 0% 100%; /* White for contrast */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 17% 93%; /* PRD: #E9ECEF */
+    --input: 210 17% 93%; /* PRD: #E9ECEF (typically same as border) */
+    --ring: 217 100% 61%; /* PRD: #377DFF (accentBlue for focus) */
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* Existing value, PRD 'rounded-md' visually aligns with this for cards */
 
-    --sidebar-background: 0 0% 98%;
+    /* Sidebar specific variables */
+    --sidebar-background: 216 33% 98%; /* PRD: #F8F9FB */
+    --sidebar-foreground: 223 13% 42%; /* PRD: #60677A (primaryText) */
+    --sidebar-primary: 217 100% 61%; /* PRD: #377DFF (accentBlue for active items) */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 210 17% 93%; /* PRD: #E9ECEF (border color for hover/accent background) */
+    --sidebar-accent-foreground: 223 13% 42%; /* PRD: #60677A (primaryText) */
+    --sidebar-border: 210 17% 93%; /* PRD: #E9ECEF */
+    --sidebar-ring: 217 100% 61%; /* PRD: #377DFF (accentBlue) */
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Additional PRD Accent Colors (for direct use or mapping in Tailwind) */
+    --accent-yellow-val: 38 100% 61%; /* PRD: #FFAC3C */
+    --accent-green-val: 158 60% 55%; /* PRD: #43D39E */
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Typography */
+    --font-sans: "Nunito Sans", sans-serif;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Theme Variables (derived based on new light theme) */
+    --background: 220 15% 10%;
+    --foreground: 215 20% 85%;
+    --card: 220 15% 14%;
+    --card-foreground: 215 20% 85%;
+    --popover: 220 15% 12%;
+    --popover-foreground: 215 20% 85%;
+    --primary: 217 100% 61%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 215 20% 85%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 15% 60%;
+    --accent: 217 100% 61%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 349 87% 63%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 217 100% 61%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    /* Sidebar specific for dark mode */
+    --sidebar-background: 220 15% 12%;
+    --sidebar-foreground: 215 20% 85%;
+    --sidebar-primary: 217 100% 61%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
+    --sidebar-accent: 220 15% 22%;
+    --sidebar-accent-foreground: 215 20% 85%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 217 100% 61%;
 
-@layer base {
+    /* Additional PRD Accent Colors for dark mode (can stay bright) */
+    --accent-yellow-val: 38 100% 61%;
+    --accent-green-val: 158 60% 55%;
+  }
+
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
